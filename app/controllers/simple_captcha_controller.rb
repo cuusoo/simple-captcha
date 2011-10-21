@@ -1,6 +1,5 @@
 class SimpleCaptchaController < ActionController::Base
-  include ActionController::DataStreaming
-  include SimpleCaptcha::ImageHelpers
+  include Rails.version.to_f <= 3.0 ? ActionController::Streaming : ActionController::DataStreaming
 
   # GET /simple_captcha
   def show
