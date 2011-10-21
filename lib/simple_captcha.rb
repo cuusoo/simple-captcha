@@ -2,7 +2,6 @@
 
 module SimpleCaptcha
   autoload :Utils,             'simple_captcha/utils'
-
   autoload :ImageHelpers,      'simple_captcha/image'
   autoload :ViewHelper,        'simple_captcha/view'
   autoload :ControllerHelpers, 'simple_captcha/controller'

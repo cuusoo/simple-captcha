@@ -1,7 +1,5 @@
 require 'digest/sha1'
 
-class SimpleCaptchaError < StandardError; end
-
 module SimpleCaptcha #:nodoc
   module Utils #:nodoc
     # Execute command with params and return output if exit status equal expected_outcodes
@@ -16,7 +14,7 @@ module SimpleCaptcha #:nodoc
       output = `#{command}`
 
       unless [expected_outcodes].flatten.include?($?.exitstatus)
-        raise ::SimpleCaptchaError, "Error while running #{cmd}: #{output}"
+        raise StandardError, "Error while running #{cmd}: #{output}"
       end
 
       output
