@@ -10,7 +10,7 @@ class SimpleCaptchaController < ActionController::Base
           :type => 'image/jpeg',
           :disposition => 'inline',
           :filename => 'simple_captcha.jpg')
-      rescue SimpleCaptchaError => e
+      rescue ::SimpleCaptchaError => e
         self.response_body = [404, {"Content-Type" => "text/html"}, ["Not Found"]]
       end
     else
